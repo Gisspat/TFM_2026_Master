@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['persona']
+
+roboflow:
+  workspace: gisselas-workspace-pku8a
+  project: personas_en_autobus_tesis
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/gisselas-workspace-pku8a/personas_en_autobus_tesis/dataset/2
