@@ -1,0 +1,6 @@
+#      DECLARACIÓN DE DEPENDENCIAS EXTERNAS DE HARDWARE Y MODELOS DE INFERENCIA IA
+dependencies:
+  esp32_s3_eye_noglib:
+    version: '*'
+  pedestrian_detect:
+    version: '*'
