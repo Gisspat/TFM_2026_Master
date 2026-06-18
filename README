@@ -1,0 +1,118 @@
+# TFM 2026 - DISEÑO E IMPLEMENTACIÓN DE UN SISTEMA IOT PARA LA ESTIMACIÓN DE AFORO EN TRANSPORTE PÚBLICO MEDIANTE SENSORIZACIÓN AMBIENTAL Y VISIÓN POR COMPUTADOR
+
+## Descripción General
+
+Este repositorio contiene el desarrollo realizado para el Trabajo Fin de Máster (TFM), cuyo objetivo es analizar la viabilidad de diferentes enfoques para la estimación de aforo en entornos de transporte público utilizando tecnologías IoT, aprendizaje automático, visión por computador y técnicas de Inteligencia Artificial Explicable (XAI).
+
+El trabajo propone y evalúa dos sistemas independientes:
+
+* **Sistema Tabular:** basado en sensores IoT para la adquisición de variables ambientales y de conectividad, utilizando modelos de aprendizaje automático para clasificar niveles de ocupación.
+* **Sistema Visual:** basado en visión por computador para la detección de personas. El dispositivo ESP32-S3-EYE se utiliza para la captura y transmisión de imágenes, mientras que el procesamiento e inferencia mediante YOLOv8 se ejecutan en un servidor externo.
+
+Ambos enfoques incorporan técnicas XAI con el objetivo de mejorar la interpretabilidad de los modelos desarrollados.
+
+---
+
+## Objetivo del Proyecto
+
+* Desarrollar un sistema IoT para la estimación de aforo en autobuses mediante la integración de sensores IoT, técnicas de visión por computador 
+y modelos de aprendizaje automático con la finalidad de evaluar la viabilidad, rendimiento y comportamiento dentro de un entorno real.
+
+---
+
+## Tecnologías Utilizadas
+
+### Hardware
+
+* ESP-WROOM32
+* ESP32-S3-EYE
+* Sensor SGP30
+* Sensor Si7021
+* Aplicación móvil OwnTracks para GPS 
+
+### Software
+
+* ESP-IDF
+* ESP-WHO
+* Python
+* FastAPI
+* HiveMQ Cloud
+* MQTT
+* Google Colab
+* OpenCV
+* Scikit-Learn
+* Grad-CAM
+* SHAP
+* Ultralytics YOLOv8
+
+---
+
+## Estructura del Repositorio
+
+```text
+TFM_2026_Master
+│
+├── Sistema_Tabular/
+│   ├── Entrenamiento
+│   ├── Inferencia
+│   └── README.md
+│
+├── Sistema_Visual/
+│   ├── Entrenamiento
+│   ├── Inferencia
+│   └── README.md
+│
+├── Entrenamiento_Modelo_TFM/
+│
+├── servidor_yolo.py
+├── mqtt_to_csv.py
+│
+├── LICENSE
+└── README.md
+```
+
+Cada sistema dispone de su propia documentación específica dentro de su correspondiente directorio.
+
+---
+
+## Descripción de los Sistemas
+
+### Sistema Tabular
+
+Utiliza información procedente de sensores IoT para clasificar niveles de ocupación:
+
+* Temperatura
+* Humedad
+* eCO₂
+* Redes detectadas
+* Intensidad de señal RSSI
+* Latitud
+* Longitud
+
+El modelo empleado corresponde a Random Forest y la interpretabilidad se realiza mediante SHAP.
+
+### Sistema Visual
+
+Utiliza imágenes capturadas mediante el dispositivo ESP32-S3-EYE.
+
+La detección de personas se realiza mediante YOLOv8, mientras que la interpretación visual del modelo se lleva a cabo mediante Grad-CAM.
+
+La inferencia se ejecuta en un servidor externo mediante FastAPI.
+
+---
+
+## Licencia
+
+El código desarrollado en este proyecto se distribuye bajo licencia MIT.
+
+Las bibliotecas, frameworks y herramientas utilizadas mantienen sus respectivas licencias originales.
+
+Los conjuntos de datos utilizados para el entrenamiento del sistema visual fueron obtenidos mediante la plataforma Roboflow y utilizados conforme a las condiciones de uso y licencias establecidas por sus autores.
+
+---
+
+## Uso Académico
+
+Este repositorio ha sido desarrollado exclusivamente con fines académicos dentro del Trabajo Fin de Máster correspondiente al curso 2025-2026.
+
+Los resultados obtenidos representan una evaluación experimental de los enfoques propuestos y constituyen una base para futuras investigaciones relacionadas con la estimación inteligente de aforo mediante sistemas IoT y visión por computador.
